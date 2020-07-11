@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  ginza:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./src:/app
+    networks:
+      - app_backend
+    ports:
+      - 5000:5000
+
+networks:
+  app_backend:
+    driver: bridge
